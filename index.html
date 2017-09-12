@@ -201,6 +201,10 @@
         text-decoration: none;
         color: #000;
     }
+    .cookie-popup-lower {
+        padding: 15px;
+        font-size: 14px;
+    }
 
 
     /* Positions */
@@ -403,6 +407,7 @@
             <div>
                 <input type="text" class="form-control" name="customAccept" id="customAccept" value="" placeholder="Accept Button Text...">
                 <input type="text" class="form-control" name="customLearnMore" id="customLearnMore" value="" placeholder="Learn More Button Text...">
+                <input type="text" class="form-control" name="customLearnMoreInfo" id="customLearnMoreInfo" value="" placeholder="Learn More Info Text...">
             </div>
         </div>
     </div>
@@ -422,13 +427,13 @@
             position: "bottom"
         };
 
-        var cookie = new cookiePopup(options);
+        var cookie = $.acceptCookies();
 
         $('.theme-button').click(function(e) {
             e.preventDefault();
             $('#cookie-popup-container').remove();
             options.theme = $(this).data("theme").replace("theme-", "");
-            cookie = new cookiePopup(options);
+            cookie = $.acceptCookies(options);
         });
 
         $('.position-button').click(function(e) {
@@ -437,7 +442,7 @@
 
             var position = $(this).data("position");
             options.position = position;
-            cookie = new cookiePopup(options);
+            cookie = $.acceptCookies(options);
         });
 
         $('.option-button').click(function(e) {
@@ -466,11 +471,13 @@
                     customText.acceptButton = $("#customAccept").val();
                 if($("#customLearnMore").val() != "")
                     customText.learnMoreButton = $("#customLearnMore").val();
+                if($("#customLearnMoreInfo").val() != "")
+                    customText.learnMoreInfo = $("#customLearnMoreInfo").val();
 
                 options.customText = customText;
             }
 
-            cookie = new cookiePopup(options);
+            cookie = $.acceptCookies(options);
         });
     });    
 </script>

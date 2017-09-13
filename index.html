@@ -354,6 +354,11 @@
 <body class="index" id="page-top">
 
     <div class="content">
+        <h1>Clear Cookie</h1>
+        <div class="button-group">
+            <a href="#" class="button clear-button">Clear</a>
+        </div>
+
         <h1>Themes</h1>
         <div class="button-group theme-buttons">
             <a href="#" class="button theme-button" data-theme="theme-light">Light</a>
@@ -428,6 +433,11 @@
         };
 
         var cookie = $.acceptCookies();
+
+        $('.clear-button').click(function(e) {
+            e.preventDefault();
+            document.cookie = 'cookiesAccepted=; path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        });
 
         $('.theme-button').click(function(e) {
             e.preventDefault();

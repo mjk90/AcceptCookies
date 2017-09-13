@@ -15,10 +15,12 @@
                 '</div>' +
             '</div>' +
             '<div class="cookie-popup-lower" style="display: none;">' +
-                'Cookies are small text files held on your computer. They allow us to give you the best browsing experience possible and mean we can understand how you use our site.' +
+                'Cookies are small files stored on your computer, which websites use to improve your browsing experience. They may be used to save your progress or user preferences.' +
             '</div>' +
         '</div>' +
     '</div>';
+
+    var onAccept;
 
     $.extend({
         acceptCookies : function(options) {
@@ -55,6 +57,10 @@
                         if(options.customText.learnMoreInfo != undefined)
                             cookiePopup.find(".cookie-popup-lower").text(options.customText.learnMoreInfo);
                     }
+
+                    if(options.onAccept != undefined) {
+                        onAccept = options.onAccept;
+                    }
                 }
                 
                 cookiePopup.find('.cookie-popup').addClass("position-" + position);
@@ -65,12 +71,11 @@
     });
 
     $(document).on('click', '.cookie-popup-accept-cookies', function(e) {
-        //var expiryDate = moment($("#acceptCookiesExpiryDateUtc").val(), "DD/MM/YYYY hh:mm");
-        //var expires = "expires=" + expiryDate.toDate().toUTCString();
         e.preventDefault();
-        var expires = "expires=08/11/2017"
-        document.cookie = "cookiesAccepted=true; " + expires + "; path=/";
-        $('.cookie-popup').slideToggle();
+        saveCookie();
+        $('.cookie-popup').slideToggle();        
+        if (typeof onAccept === "function")
+            onAccept();
     }).on('click', '.cookie-popup-learn-more', function(e) {
         e.preventDefault();
         $('.cookie-popup-lower').slideToggle();
@@ -90,6 +95,11 @@
             }
         }
         return "";
+    }
+
+    function saveCookie() {        
+        var expires = "expires=01/01/2099"
+        document.cookie = "cookiesAccepted=true; " + expires + "; path=/";
     }
  
 }( jQuery ));

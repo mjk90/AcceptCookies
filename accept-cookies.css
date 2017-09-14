@@ -1,6 +1,9 @@
 /* Plugin Styles */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+.cookie-popup a:hover {
+    color: initial;
+}
 .cookie-popup {
     display: none;
     position: fixed;
@@ -63,6 +66,8 @@
 }    
 .cookie-popup-accept-cookies:hover {
     bottom: 1px;
+    text-decoration: none;
+    color: initial;
 }
 .cookie-popup-accept-cookies:active {
     bottom: 0;

@@ -10,12 +10,17 @@
 
     <title>AcceptCookies.js</title>
 
+    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+
     <style type="text/css">
         /* Page Styles */
         @import url('https://fonts.googleapis.com/css?family=Roboto');
         @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
         body {            
             font-family: 'Roboto', 'Noto Sans', sans-serif;
+        }
+        .content {
+            padding: 25px;
         }
         .content .button {
             display: inline-block;
@@ -125,67 +130,110 @@
 
 <body class="index" id="page-top">
 
-    <div class="content">
-        <h1>Clear Cookie</h1>
-        <div class="button-group">
-            <div class="cookie-inidcator"></div>
-            <a href="#" class="button clear-button">Clear</a>
-        </div>
+    <div class="container">
+        <div class="content">
 
-        <h1>Themes</h1>
-        <div class="button-group theme-buttons">
-            <a href="#" class="button theme-button" data-theme="theme-light">Light</a>
-            <a href="#" class="button theme-button" data-theme="theme-dark">Dark</a>
-            <a href="#" class="button theme-button" data-theme="theme-red">Red</a>
-            <a href="#" class="button theme-button" data-theme="theme-pink">Pink</a>
-            <a href="#" class="button theme-button" data-theme="theme-purple">Purple</a>
-            <a href="#" class="button theme-button" data-theme="theme-deeppurple">Deep Purple</a>
-            <a href="#" class="button theme-button" data-theme="theme-indigo">Indigo</a>
-            <a href="#" class="button theme-button" data-theme="theme-blue">Blue</a>
-            <a href="#" class="button theme-button" data-theme="theme-lightblue">Light Blue</a>
-            <a href="#" class="button theme-button" data-theme="theme-cyan">Cyan</a>
-            <a href="#" class="button theme-button" data-theme="theme-teal">Teal</a>
-            <a href="#" class="button theme-button" data-theme="theme-green">Green</a>
-            <a href="#" class="button theme-button" data-theme="theme-lightgreen">Light Green</a>
-            <a href="#" class="button theme-button" data-theme="theme-lime">Lime</a>
-            <a href="#" class="button theme-button" data-theme="theme-yellow">Yellow</a>
-            <a href="#" class="button theme-button" data-theme="theme-amber">Amber</a>
-            <a href="#" class="button theme-button" data-theme="theme-orange">Orange</a>
-            <a href="#" class="button theme-button" data-theme="theme-deeporange">Deep Orange</a>
-            <a href="#" class="button theme-button" data-theme="theme-brown">Brown</a>
-            <a href="#" class="button theme-button" data-theme="theme-grey">Grey</a>
-            <a href="#" class="button theme-button" data-theme="theme-bluegrey">Blue Grey</a>
-        </div>
+            <header class="row">
+                <div class="col-md-12 text-center mb-3">
+                    <img src="images/logosmall.png">
+                </div>
+            </header>
 
-        <h1>Positions</h1>
-        <div class="button-group position-buttons">
-            <a href="#" class="button position-button" data-position="top">Top</a>
-            <a href="#" class="button position-button" data-position="topleft">Top Left</a>
-            <a href="#" class="button position-button" data-position="topright">Top Right</a>
+            <div class="jumbotron jumbotron-fluid text-center">
+                <div class="container">
+                    <h1 class="display-3">Simple, responsive cookie acceptance plugin</h1>
+                    <p>Comply with EU cookie law, in a non-obtrusive way that conforms to your site's style.</p>
+                    <p class="lead">
+                        <a class="btn btn-success btn-lg" href="#" role="button">Download</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row marketing">
+                <div class="col-lg-6">
+                    <h4>Easy to Use</h4>
+                    <p>Simply include the JS and CSS files, then add <code>$.acceptCookies()</code> to your page.</p>
+
+                    <h4>Customizable</h4>
+                    <p>Many different themes and options available. See below for a demo.</p>
+
+                    <h4>Subheading</h4>
+                    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                </div>
+
+                <div class="col-lg-6">
+                    <h4>Responsive</h4>
+                    <p>Scales to fit your device automatically. No extra work needed!</p>
+
+                    <h4>Subheading</h4>
+                    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+                    <h4>Subheading</h4>
+                    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                </div>
+            </div>
+
+            <h1>Clear Cookie</h1>
+            <div class="button-group">
+                <div class="cookie-inidcator"></div>
+                <a href="#" class="button clear-button">Clear</a>
+            </div>
+
+            <h1>Themes</h1>
+            <div class="button-group theme-buttons">
+                <a href="#" class="button theme-button" data-theme="theme-light">Light</a>
+                <a href="#" class="button theme-button" data-theme="theme-dark">Dark</a>
+                <a href="#" class="button theme-button" data-theme="theme-red">Red</a>
+                <a href="#" class="button theme-button" data-theme="theme-pink">Pink</a>
+                <a href="#" class="button theme-button" data-theme="theme-purple">Purple</a>
+                <a href="#" class="button theme-button" data-theme="theme-deeppurple">Deep Purple</a>
+                <a href="#" class="button theme-button" data-theme="theme-indigo">Indigo</a>
+                <a href="#" class="button theme-button" data-theme="theme-blue">Blue</a>
+                <a href="#" class="button theme-button" data-theme="theme-lightblue">Light Blue</a>
+                <a href="#" class="button theme-button" data-theme="theme-cyan">Cyan</a>
+                <a href="#" class="button theme-button" data-theme="theme-teal">Teal</a>
+                <a href="#" class="button theme-button" data-theme="theme-green">Green</a>
+                <a href="#" class="button theme-button" data-theme="theme-lightgreen">Light Green</a>
+                <a href="#" class="button theme-button" data-theme="theme-lime">Lime</a>
+                <a href="#" class="button theme-button" data-theme="theme-yellow">Yellow</a>
+                <a href="#" class="button theme-button" data-theme="theme-amber">Amber</a>
+                <a href="#" class="button theme-button" data-theme="theme-orange">Orange</a>
+                <a href="#" class="button theme-button" data-theme="theme-deeporange">Deep Orange</a>
+                <a href="#" class="button theme-button" data-theme="theme-brown">Brown</a>
+                <a href="#" class="button theme-button" data-theme="theme-grey">Grey</a>
+                <a href="#" class="button theme-button" data-theme="theme-bluegrey">Blue Grey</a>
+            </div>
+
+            <h1>Positions</h1>
+            <div class="button-group position-buttons">
+                <a href="#" class="button position-button" data-position="top">Top</a>
+                <a href="#" class="button position-button" data-position="topleft">Top Left</a>
+                <a href="#" class="button position-button" data-position="topright">Top Right</a>
+                <br />
+                <a href="#" class="button position-button" data-position="bottom">Bottom</a>
+                <a href="#" class="button position-button" data-position="bottomleft">Bottom Left</a>
+                <a href="#" class="button position-button" data-position="bottomright">Bottom Right</a>
+            </div>
+
+            <h1>Options</h1>
+            <div class="button-group option-buttons">
+                <a href="#" class="button option-button" data-option="default">Default</a>
+                <a href="#" class="button option-button" data-option="nolearnbutton">No "Learn More" button</a>
+            </div>
             <br />
-            <a href="#" class="button position-button" data-position="bottom">Bottom</a>
-            <a href="#" class="button position-button" data-position="bottomleft">Bottom Left</a>
-            <a href="#" class="button position-button" data-position="bottomright">Bottom Right</a>
-        </div>
-
-        <h1>Options</h1>
-        <div class="button-group option-buttons">
-            <a href="#" class="button option-button" data-option="default">Default</a>
-            <a href="#" class="button option-button" data-option="nolearnbutton">No "Learn More" button</a>
-        </div>
-        <br />
-        <div class="button-group option-buttons custom-text">
-            <div>
-                <a href="#" class="button option-button" data-option="customtext">Custom Text</a>
-            </div>
-            <div>
-                <input type="text" class="form-control" name="customHeader" id="customHeader" value="" placeholder="Popup Header Text...">
-                <input type="text" class="form-control" name="customSubHeader" id="customSubHeader" value="" placeholder="Popup Sub Header Text...">
-            </div>
-            <div>
-                <input type="text" class="form-control" name="customAccept" id="customAccept" value="" placeholder="Accept Button Text...">
-                <input type="text" class="form-control" name="customLearnMore" id="customLearnMore" value="" placeholder="Learn More Button Text...">
-                <input type="text" class="form-control" name="customLearnMoreInfo" id="customLearnMoreInfo" value="" placeholder="Learn More Info Text...">
+            <div class="button-group option-buttons custom-text">
+                <div>
+                    <a href="#" class="button option-button" data-option="customtext">Custom Text</a>
+                </div>
+                <div>
+                    <input type="text" class="form-control" name="customHeader" id="customHeader" value="" placeholder="Popup Header Text...">
+                    <input type="text" class="form-control" name="customSubHeader" id="customSubHeader" value="" placeholder="Popup Sub Header Text...">
+                </div>
+                <div>
+                    <input type="text" class="form-control" name="customAccept" id="customAccept" value="" placeholder="Accept Button Text...">
+                    <input type="text" class="form-control" name="customLearnMore" id="customLearnMore" value="" placeholder="Learn More Button Text...">
+                    <input type="text" class="form-control" name="customLearnMoreInfo" id="customLearnMoreInfo" value="" placeholder="Learn More Info Text...">
+                </div>
             </div>
         </div>
     </div>

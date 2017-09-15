@@ -19,6 +19,11 @@
         body {            
             font-family: 'Roboto', 'Noto Sans', sans-serif;
         }
+        .display-3 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
         .content {
             padding: 25px;
         }
@@ -77,14 +82,6 @@
             transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
         }
 
-        .button-group {
-            display: inline-block;
-            clear: both;
-            border: 1px solid #ccc;
-            border-radius: 2px;
-            padding: 0 0 10px 10px;
-        }
-
         .button-group.option-buttons.custom-text div {
             float: left;
         }
@@ -101,27 +98,26 @@
         /* Button Colours */
         .content .button[data-theme="theme-light"] { background-color: #fafafa; }
         .content .button[data-theme="theme-dark"] { background-color: #484848; color: #fff; }
-        .content .button[data-theme="theme-red"] { background-color: #ef5350; }
+        .content .button[data-theme="theme-red"] { background-color: #ef5350; color: #fff; }
         .content .button[data-theme="theme-pink"] { background-color: #ec407a; }
-        .content .button[data-theme="theme-pink"] { background-color: #ec407a; }
+        .content .button[data-theme="theme-pink"] { background-color: #ec407a; color: #fff; }
         .content .button[data-theme="theme-purple"] { background-color: #ab47bc; color: #fff; }
         .content .button[data-theme="theme-deeppurple"] { background-color: #7e57c2; color: #fff; }
         .content .button[data-theme="theme-indigo"] { background-color: #5c6bc0; color: #fff; }
-        .content .button[data-theme="theme-blue"] { background-color: #42a5f5; }
+        .content .button[data-theme="theme-blue"] { background-color: #42a5f5; color: #fff; }
         .content .button[data-theme="theme-lightblue"] { background-color: #29b6f6; }
         .content .button[data-theme="theme-cyan"] { background-color: #26c6da; }
-        .content .button[data-theme="theme-teal"] { background-color: #26a69a; }
+        .content .button[data-theme="theme-teal"] { background-color: #26a69a; color: #fff; }
         .content .button[data-theme="theme-green"] { background-color: #66bb6a; }
-
         .content .button[data-theme="theme-lightgreen"] { background-color: #9ccc65; }
         .content .button[data-theme="theme-lime"] { background-color: #d4e157; }
         .content .button[data-theme="theme-yellow"] { background-color: #ffee58; }
         .content .button[data-theme="theme-amber"] { background-color: #ffca28; }
         .content .button[data-theme="theme-orange"] { background-color: #ffa726; }
-        .content .button[data-theme="theme-deeporange"] { background-color: #ff7043; }
+        .content .button[data-theme="theme-deeporange"] { background-color: #ff7043; color: #fff; }
         .content .button[data-theme="theme-brown"] { background-color: #8d6e63; color: #fff; }
         .content .button[data-theme="theme-grey"] { background-color: #bdbdbd; }
-        .content .button[data-theme="theme-bluegrey"] { background-color: #78909c; }        
+        .content .button[data-theme="theme-bluegrey"] { background-color: #78909c; color: #fff; }        
     </style>
 
     <link rel="stylesheet" type="text/css" href="accept-cookies.css">
@@ -173,66 +169,82 @@
                 </div>
             </div>
 
-            <h1>Clear Cookie</h1>
-            <div class="button-group">
-                <div class="cookie-inidcator"></div>
-                <a href="#" class="button clear-button">Clear</a>
-            </div>
-
-            <h1>Themes</h1>
-            <div class="button-group theme-buttons">
-                <a href="#" class="button theme-button" data-theme="theme-light">Light</a>
-                <a href="#" class="button theme-button" data-theme="theme-dark">Dark</a>
-                <a href="#" class="button theme-button" data-theme="theme-red">Red</a>
-                <a href="#" class="button theme-button" data-theme="theme-pink">Pink</a>
-                <a href="#" class="button theme-button" data-theme="theme-purple">Purple</a>
-                <a href="#" class="button theme-button" data-theme="theme-deeppurple">Deep Purple</a>
-                <a href="#" class="button theme-button" data-theme="theme-indigo">Indigo</a>
-                <a href="#" class="button theme-button" data-theme="theme-blue">Blue</a>
-                <a href="#" class="button theme-button" data-theme="theme-lightblue">Light Blue</a>
-                <a href="#" class="button theme-button" data-theme="theme-cyan">Cyan</a>
-                <a href="#" class="button theme-button" data-theme="theme-teal">Teal</a>
-                <a href="#" class="button theme-button" data-theme="theme-green">Green</a>
-                <a href="#" class="button theme-button" data-theme="theme-lightgreen">Light Green</a>
-                <a href="#" class="button theme-button" data-theme="theme-lime">Lime</a>
-                <a href="#" class="button theme-button" data-theme="theme-yellow">Yellow</a>
-                <a href="#" class="button theme-button" data-theme="theme-amber">Amber</a>
-                <a href="#" class="button theme-button" data-theme="theme-orange">Orange</a>
-                <a href="#" class="button theme-button" data-theme="theme-deeporange">Deep Orange</a>
-                <a href="#" class="button theme-button" data-theme="theme-brown">Brown</a>
-                <a href="#" class="button theme-button" data-theme="theme-grey">Grey</a>
-                <a href="#" class="button theme-button" data-theme="theme-bluegrey">Blue Grey</a>
-            </div>
-
-            <h1>Positions</h1>
-            <div class="button-group position-buttons">
-                <a href="#" class="button position-button" data-position="top">Top</a>
-                <a href="#" class="button position-button" data-position="topleft">Top Left</a>
-                <a href="#" class="button position-button" data-position="topright">Top Right</a>
-                <br />
-                <a href="#" class="button position-button" data-position="bottom">Bottom</a>
-                <a href="#" class="button position-button" data-position="bottomleft">Bottom Left</a>
-                <a href="#" class="button position-button" data-position="bottomright">Bottom Right</a>
-            </div>
-
-            <h1>Options</h1>
-            <div class="button-group option-buttons">
-                <a href="#" class="button option-button" data-option="default">Default</a>
-                <a href="#" class="button option-button" data-option="nolearnbutton">No "Learn More" button</a>
-            </div>
-            <br />
-            <div class="button-group option-buttons custom-text">
-                <div>
-                    <a href="#" class="button option-button" data-option="customtext">Custom Text</a>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <h1>Clear Cookie</h1>
+                    <div class="button-group">
+                        <div class="cookie-inidcator"></div>
+                        <a href="#" class="button clear-button">Clear</a>
+                    </div>
                 </div>
-                <div>
-                    <input type="text" class="form-control" name="customHeader" id="customHeader" value="" placeholder="Popup Header Text...">
-                    <input type="text" class="form-control" name="customSubHeader" id="customSubHeader" value="" placeholder="Popup Sub Header Text...">
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <h1>Themes</h1>
+                    <div class="button-group theme-buttons">
+                        <a href="#" class="button theme-button" data-theme="theme-light">Light</a>
+                        <a href="#" class="button theme-button" data-theme="theme-dark">Dark</a>
+                        <a href="#" class="button theme-button" data-theme="theme-red">Red</a>
+                        <a href="#" class="button theme-button" data-theme="theme-pink">Pink</a>
+                        <a href="#" class="button theme-button" data-theme="theme-purple">Purple</a>
+                        <a href="#" class="button theme-button" data-theme="theme-deeppurple">Deep Purple</a>
+                        <a href="#" class="button theme-button" data-theme="theme-indigo">Indigo</a>
+                        <a href="#" class="button theme-button" data-theme="theme-blue">Blue</a>
+                        <a href="#" class="button theme-button" data-theme="theme-lightblue">Light Blue</a>
+                        <a href="#" class="button theme-button" data-theme="theme-cyan">Cyan</a>
+                        <a href="#" class="button theme-button" data-theme="theme-teal">Teal</a>
+                        <a href="#" class="button theme-button" data-theme="theme-green">Green</a>
+                        <a href="#" class="button theme-button" data-theme="theme-lightgreen">Light Green</a>
+                        <a href="#" class="button theme-button" data-theme="theme-lime">Lime</a>
+                        <a href="#" class="button theme-button" data-theme="theme-yellow">Yellow</a>
+                        <a href="#" class="button theme-button" data-theme="theme-amber">Amber</a>
+                        <a href="#" class="button theme-button" data-theme="theme-orange">Orange</a>
+                        <a href="#" class="button theme-button" data-theme="theme-deeporange">Deep Orange</a>
+                        <a href="#" class="button theme-button" data-theme="theme-brown">Brown</a>
+                        <a href="#" class="button theme-button" data-theme="theme-grey">Grey</a>
+                        <a href="#" class="button theme-button" data-theme="theme-bluegrey">Blue Grey</a>
+                    </div>
                 </div>
-                <div>
-                    <input type="text" class="form-control" name="customAccept" id="customAccept" value="" placeholder="Accept Button Text...">
-                    <input type="text" class="form-control" name="customLearnMore" id="customLearnMore" value="" placeholder="Learn More Button Text...">
-                    <input type="text" class="form-control" name="customLearnMoreInfo" id="customLearnMoreInfo" value="" placeholder="Learn More Info Text...">
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <h1>Options</h1>
+                    <div class="row">
+                    <div class="button-group option-buttons col-md-12">
+                        <a href="#" class="button option-button" data-option="default">Default</a>
+                        <a href="#" class="button option-button" data-option="nolearnbutton">No "Learn More" button</a>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="button-group option-buttons custom-text col-md-12">
+                            <div>
+                                <a href="#" class="button option-button" data-option="customtext">Custom Text</a>
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" name="customHeader" id="customHeader" value="" placeholder="Popup Header Text...">
+                                <input type="text" class="form-control" name="customSubHeader" id="customSubHeader" value="" placeholder="Popup Sub Header Text...">
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" name="customAccept" id="customAccept" value="" placeholder="Accept Button Text...">
+                                <input type="text" class="form-control" name="customLearnMore" id="customLearnMore" value="" placeholder="Learn More Button Text...">
+                                <input type="text" class="form-control" name="customLearnMoreInfo" id="customLearnMoreInfo" value="" placeholder="Learn More Info Text...">
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h1>Positions</h1>
+                    <div class="button-group position-buttons">
+                        <a href="#" class="button position-button" data-position="top">Top</a>
+                        <a href="#" class="button position-button" data-position="topleft">Top Left</a>
+                        <a href="#" class="button position-button" data-position="topright">Top Right</a>
+                        <a href="#" class="button position-button" data-position="bottom">Bottom</a>
+                        <a href="#" class="button position-button" data-position="bottomleft">Bottom Left</a>
+                        <a href="#" class="button position-button" data-position="bottomright">Bottom Right</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -248,7 +260,7 @@
         var options = {
             title: "This website uses cookies",
             text: "By using this site, you agree to our use of cookies.",
-            theme: "light",
+            theme: "dark",
             learnMore: true,
             position: "bottom",
             onAccept: acceptCallbackFunction

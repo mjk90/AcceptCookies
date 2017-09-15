@@ -1,9 +1,6 @@
 /* Plugin Styles */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-.cookie-popup a:hover {
-    color: initial;
-}
 .cookie-popup {
     display: none;
     position: fixed;
@@ -13,6 +10,8 @@
     background-color: #fafafa;
     color: #000;
     font-family: 'Roboto', 'Noto Sans', sans-serif;
+    line-height: initial;
+    box-sizing: initial;
 }    
 .cookie-popup-inner {
     display: table;
@@ -67,10 +66,11 @@
 .cookie-popup-accept-cookies:hover {
     bottom: 1px;
     text-decoration: none;
-    color: initial;
+    color: inherit;
 }
 .cookie-popup-accept-cookies:active {
     bottom: 0;
+    color: initial;
 }
 .cookie-popup-learn-more {
     display: block;
@@ -147,13 +147,13 @@
 .theme-dark .cookie-popup-accept-cookies { background-color: #212121; color: #fff; }
 .theme-dark .cookie-popup-learn-more { color: #fff; }
 
-.theme-red .cookie-popup { background-color: #ef5350; color: #000; }
-.theme-red .cookie-popup-accept-cookies { background-color: #b61827; color: #fff; }
-.theme-red .cookie-popup-learn-more { color: #000; }
+.theme-red .cookie-popup { background-color: #ef5350; color: #fff; }
+.theme-red .cookie-popup-accept-cookies { background-color: #b61827;  color: #fff; }
+.theme-red .cookie-popup-learn-more { color: #fff; }
 
-.theme-pink .cookie-popup { background-color: #ec407a; color: #000; }
+.theme-pink .cookie-popup { background-color: #ec407a; color: #fff; }
 .theme-pink .cookie-popup-accept-cookies { background-color: #b4004e; color: #fff; }
-.theme-pink .cookie-popup-learn-more { color: #000; }
+.theme-pink .cookie-popup-learn-more { color: #000; color: #fff; }
 
 .theme-purple .cookie-popup{ background-color: #ab47bc; color: #fff; }
 .theme-purple .cookie-popup-accept-cookies { background-color: #790e8b; color: #fff; }
@@ -167,9 +167,9 @@
 .theme-indigo .cookie-popup-accept-cookies { background-color: #23408e; color: #fff; }
 .theme-indigo .cookie-popup-learn-more { color: #fff; }
 
-.theme-blue .cookie-popup { background-color: #42a5f5; color: #000; }
+.theme-blue .cookie-popup { background-color: #42a5f5; color: #fff; }
 .theme-blue .cookie-popup-accept-cookies { background-color: #0077c2; color: #fff; }
-.theme-blue .cookie-popup-learn-more { color: #000; }
+.theme-blue .cookie-popup-learn-more { color: #fff; }
 
 .theme-lightblue .cookie-popup { background-color: #29b6f6; color: #000; }
 .theme-lightblue .cookie-popup-accept-cookies { background-color: #0086c3; color: #000; }
@@ -179,9 +179,9 @@
 .theme-cyan .cookie-popup-accept-cookies { background-color: #0095a8; color: #000; }
 .theme-cyan .cookie-popup-learn-more { color: #000; }
 
-.theme-teal .cookie-popup { background-color: #26a69a; color: #000; }
+.theme-teal .cookie-popup { background-color: #26a69a; color: #fff; }
 .theme-teal .cookie-popup-accept-cookies { background-color: #00766c; color: #fff; }
-.theme-teal .cookie-popup-learn-more { color: #000; }
+.theme-teal .cookie-popup-learn-more { color: #000; color: #fff; }
 
 .theme-green .cookie-popup { background-color: #66bb6a; color: #000; }
 .theme-green .cookie-popup-accept-cookies { background-color: #338a3e; color: #000; }
@@ -207,9 +207,9 @@
 .theme-orange .cookie-popup-accept-cookies { background-color: #c77800; color: #000; }
 .theme-orange .cookie-popup-learn-more { color: #000; }
 
-.theme-deeporange .cookie-popup { background-color: #ff7043; color: #000; }
+.theme-deeporange .cookie-popup { background-color: #ff7043; color: #fff; }
 .theme-deeporange .cookie-popup-accept-cookies { background-color: #c63f17; color: #fff; }
-.theme-deeporange .cookie-popup-learn-more { color: #000; }
+.theme-deeporange .cookie-popup-learn-more { color: #fff; }
 
 .theme-brown .cookie-popup { background-color: #8d6e63; color: #fff; }
 .theme-brown .cookie-popup-accept-cookies { background-color: #5f4339; color: #fff; }
@@ -219,6 +219,6 @@
 .theme-grey .cookie-popup-accept-cookies { background-color: #8d8d8d; color: #000; }
 .theme-grey .cookie-popup-learn-more { color: #000; }
 
-.theme-bluegrey .cookie-popup { background-color: #78909c; color: #000; }
+.theme-bluegrey .cookie-popup { background-color: #78909c; color: #fff; }
 .theme-bluegrey .cookie-popup-accept-cookies { background-color: #4b636e; color: #fff; }
-.theme-bluegrey .cookie-popup-learn-more { color: #000; }
+.theme-bluegrey .cookie-popup-learn-more { color: #fff; }

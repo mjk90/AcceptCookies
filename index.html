@@ -99,6 +99,11 @@
             min-width: 200px;
         }
 
+        footer {
+            border-top: 1px solid #E0E0E0;
+            font-size: 14px;
+        }
+
         /* Button Colours */
         .content .button[data-theme="theme-light"] { background-color: #fafafa; }
         .content .button[data-theme="theme-dark"] { background-color: #484848; color: #fff; }
@@ -139,14 +144,15 @@
             <h1 class="display-3">Simple, responsive cookie acceptance plugin</h1>
             <p>Comply with EU cookie law, in a non-obtrusive way that conforms to your site's style.</p>
             <p class="lead">
-                <a class="btn btn-success btn-lg" href="#" role="button">Download</a>
+                <a id="btnCustomize" class="btn btn-info btn-lg" href="#" role="button">Customize</a>
+                <a id="btnDownload" class="btn btn-success btn-lg" href="#" role="button">Download</a>
             </p>
         </div>
     </div>
 
     <div class="container">
         <div class="content">
-            <div class="row marketing">
+            <div class="row marketing mb-5">
                 <div class="col-md-4">
                     <h4>Easy to Use</h4>
                     <p>Simply include the JS and CSS files, then add <code>$.acceptCookies()</code> to your page.</p>
@@ -163,20 +169,10 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <h1>Clear Cookie</h1>
-                    <div class="button-group">
-                        <span class="cookie-indicator badge mt-3"></span>
-                        <a href="#" class="button clear-button">Clear</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8 mb-5">
                     <h1>Themes</h1>
-                    <div class="button-group theme-buttons">
+                    <div id="theme-buttons" class="button-group theme-buttons">
                         <a href="#" class="button theme-button" data-theme="theme-light">Light</a>
                         <a href="#" class="button theme-button" data-theme="theme-dark">Dark</a>
                         <a href="#" class="button theme-button" data-theme="theme-red">Red</a>
@@ -200,49 +196,84 @@
                         <a href="#" class="button theme-button" data-theme="theme-bluegrey">Blue Grey</a>
                     </div>
                 </div>
+                <div class="col-md-4 mb-5">
+                    <h1>Cookie Status</h1>
+                    <div class="button-group">
+                        <span class="cookie-indicator badge mt-3"></span>
+                        <a href="#" class="button clear-button">Clear</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="row mb-3">
-                <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6 mb-5">
                     <h1>Options</h1>
                     <div class="row">
+                        <div class="button-group position-buttons col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#" class="button position-button" data-position="topleft">Top Left</a>
+                                    <a href="#" class="button position-button" data-position="top">Top</a>
+                                    <a href="#" class="button position-button" data-position="topright">Top Right</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#" class="button position-button" data-position="bottomleft">Bottom Left</a>
+                                    <a href="#" class="button position-button" data-position="bottom">Bottom</a>
+                                    <a href="#" class="button position-button" data-position="bottomright">Bottom Right</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="button-group option-buttons col-md-12">
                             <a href="#" class="button option-button" data-option="default">Default</a>
                             <a href="#" class="button option-button" data-option="nolearnbutton">No "Learn More" button</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-md-6 mb-5">
+                    <h1>Custom Text</h1>
                     <div class="row">
                         <div class="button-group option-buttons custom-text col-md-12">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <a href="#" class="button option-button" data-option="customtext">Custom Text</a>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="customHeader" id="customHeader" value="" placeholder="Popup Header Text...">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="customSubHeader" id="customSubHeader" value="" placeholder="Popup Sub Header Text...">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="customAccept" id="customAccept" value="" placeholder="Accept Button Text...">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="customLearnMore" id="customLearnMore" value="" placeholder="Learn More Button Text...">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="customLearnMoreInfo" id="customLearnMoreInfo" value="" placeholder="Learn More Info Text...">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="customHeader" id="customHeader" value="" placeholder="Popup Header Text...">
-                                    <input type="text" class="form-control" name="customSubHeader" id="customSubHeader" value="" placeholder="Popup Sub Header Text...">
-                                    <input type="text" class="form-control" name="customAccept" id="customAccept" value="" placeholder="Accept Button Text...">
-                                    <input type="text" class="form-control" name="customLearnMore" id="customLearnMore" value="" placeholder="Learn More Button Text...">
-                                    <input type="text" class="form-control" name="customLearnMoreInfo" id="customLearnMoreInfo" value="" placeholder="Learn More Info Text...">
+                                <div class="col-md-12">
+                                    <a href="#" class="button option-button" data-option="customtext">Apply</a>
                                 </div>
                             </div>
                         </div>
-                        </div>
-                </div>
-
-                <div class="col-md-6">
-                    <h1>Positions</h1>
-                    <div class="button-group position-buttons">
-                        <a href="#" class="button position-button" data-position="top">Top</a>
-                        <a href="#" class="button position-button" data-position="topleft">Top Left</a>
-                        <a href="#" class="button position-button" data-position="topright">Top Right</a>
-                        <a href="#" class="button position-button" data-position="bottom">Bottom</a>
-                        <a href="#" class="button position-button" data-position="bottomleft">Bottom Left</a>
-                        <a href="#" class="button position-button" data-position="bottomright">Bottom Right</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer class="footer container pt-3 pb-3">
+        <div class="container text-center">
+            <span class="text-muted">
+                <a href="https://mjk90.github.io/" target="_blank">AcceptCookies &copy; 2017 Matt Kelly</a>
+            </span>
+        </div>
+    </footer>
 
 </body>
 
@@ -284,6 +315,14 @@
             var position = $(this).data("position");
             options.position = position;
             cookie = $.acceptCookies(options);
+        });
+
+        $('#btnCustomize').click(function(e) {
+            e.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: ($('.theme-buttons').offset().top)
+            },500);
         });
 
         $('.option-button').click(function(e) {

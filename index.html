@@ -263,6 +263,85 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-12">
+                    <h3>Current Options</h3>
+                    <textarea class="form-control" id="currentOptions" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Parameters</h1>
+                    <p>AcceptCookies plugin can be customized with the following optional parameters:</p>
+                    <table class="table table-sm table-hover">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th class="hidden-xs-down">Default</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>title</td>
+                                <td>string</td>
+                                <td>The main headline of the cookie notification</td>
+                                <td class="hidden-xs-down">"This website uses cookies"</td>
+                            </tr>
+                            <tr>
+                                <td>text</td>
+                                <td>string</td>
+                                <td>The smaller sub-header of the cookie notification</td>
+                                <td class="hidden-xs-down">"By using this site, you agree to our use of cookies."</td>
+                            </tr>
+                            <tr>
+                                <td>acceptButtonText</td>
+                                <td>string</td>
+                                <td>The text of the "Accept" button</td>
+                                <td class="hidden-xs-down">"Accept"</td>
+                            </tr>
+                            <tr>
+                                <td>learnMoreButtonText</td>
+                                <td>string</td>
+                                <td>The text of the "Learn More" button</td>
+                                <td class="hidden-xs-down">"Learn More"</td>
+                            </tr>
+                            <tr>
+                                <td>learnMoreInfoText</td>
+                                <td>string</td>
+                                <td>The text of the hidden "Learn More" information area, show when the "Learn More" button is clicked</td>
+                                <td class="hidden-xs-down">"Cookies are small files stored on your computer, which websites use to improve your browsing experience. They may be used to save your progress or user preferences."</td>
+                            </tr>
+                            <tr>
+                                <td>theme</td>
+                                <td>string</td>
+                                <td>The colour scheme of the cookie notification</td>
+                                <td class="hidden-xs-down">"dark"</td>
+                            </tr>
+                            <tr>
+                                <td>learnMore</td>
+                                <td>bool</td>
+                                <td>Display (true) a "Learn More" button or not (false)</td>
+                                <td class="hidden-xs-down">true</td>
+                            </tr>
+                            <tr>
+                                <td>position</td>
+                                <td>string</td>
+                                <td>The area of the window to show the cookie notification</td>
+                                <td class="hidden-xs-down">"bottom"</td>
+                            </tr>
+                            <tr>
+                                <td>onAccept</td>
+                                <td>callback</td>
+                                <td>The Javascript function to call when user's click "Accept".</td>
+                                <td class="hidden-xs-down">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
     </div>
@@ -343,19 +422,16 @@
             else if(option == "nolearnbutton")
                 options.learnMore = false;
             else if(option == "customtext") {
-                var customText = {};
                 if($("#customHeader").val() != "")
-                    customText.headline = $("#customHeader").val();
+                    options.title = $("#customHeader").val();
                 if($("#customSubHeader").val() != "")
-                    customText.subHeadline = $("#customSubHeader").val();
+                    options.text = $("#customSubHeader").val();
                 if($("#customAccept").val() != "")
-                    customText.acceptButton = $("#customAccept").val();
+                    options.acceptButtonText = $("#customAccept").val();
                 if($("#customLearnMore").val() != "")
-                    customText.learnMoreButton = $("#customLearnMore").val();
+                    options.learnMoreButtonText = $("#customLearnMore").val();
                 if($("#customLearnMoreInfo").val() != "")
-                    customText.learnMoreInfo = $("#customLearnMoreInfo").val();
-
-                options.customText = customText;
+                    options.learnMoreInfoText = $("#customLearnMoreInfo").val();
             }
 
             cookie = $.acceptCookies(options);

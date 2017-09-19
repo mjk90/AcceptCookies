@@ -37,30 +37,22 @@
                         cookiePopup.find('.cookie-popup-headline').text(options.title);
                     if(options.text != undefined)
                         cookiePopup.find('.cookie-popup-sub-headline').text(options.text);
+                    if(options.acceptButtonText != undefined)
+                        cookiePopup.find(".cookie-popup-accept-cookies").text(options.acceptButtonText);
+                    if(options.learnMoreButtonText != undefined)
+                        cookiePopup.find(".cookie-popup-learn-more").text(options.learnMoreButtonText);
+                    if(options.learnMoreInfoText != undefined)
+                        cookiePopup.find(".cookie-popup-lower").text(options.learnMoreInfoText);
                     if(options.theme != undefined)
                         cookiePopup.addClass("theme-" + options.theme);
+                    if(options.onAccept != undefined)
+                        onAccept = options.onAccept;
 
                     if(options.learnMore != undefined) {
                         if(options.learnMore == false)
                             cookiePopup.find(".cookie-popup-learn-more").remove();
                     }
 
-                    if(options.customText != undefined) {
-                        if(options.customText.headline != undefined)
-                            cookiePopup.find(".cookie-popup-headline").text(options.customText.headline);
-                        if(options.customText.subHeadline != undefined)
-                            cookiePopup.find(".cookie-popup-sub-headline").text(options.customText.subHeadline);
-                        if(options.customText.acceptButton != undefined)
-                            cookiePopup.find(".cookie-popup-accept-cookies").text(options.customText.acceptButton);
-                        if(options.customText.learnMoreButton != undefined)
-                            cookiePopup.find(".cookie-popup-learn-more").text(options.customText.learnMoreButton);
-                        if(options.customText.learnMoreInfo != undefined)
-                            cookiePopup.find(".cookie-popup-lower").text(options.customText.learnMoreInfo);
-                    }
-
-                    if(options.onAccept != undefined) {
-                        onAccept = options.onAccept;
-                    }
                 }
                 
                 cookiePopup.find('.cookie-popup').addClass("position-" + position);

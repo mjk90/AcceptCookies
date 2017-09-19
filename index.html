@@ -99,6 +99,10 @@
             min-width: 200px;
         }
 
+        #currentOptions {
+            background-color: #eceeef;
+        }
+
         footer {
             border-top: 1px solid #E0E0E0;
             font-size: 14px;
@@ -262,10 +266,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                
+            </div>
 
-                <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12 mb-5">
                     <h3>Current Options</h3>
+                    <p class="mb-0">To run the plugin with your selected options, copy and paste this code:</p>
                     <textarea class="form-control" id="currentOptions" rows="3"></textarea>
                 </div>
             </div>
@@ -321,16 +328,16 @@
                                 <td class="hidden-xs-down">"dark"</td>
                             </tr>
                             <tr>
-                                <td>learnMore</td>
-                                <td>bool</td>
-                                <td>Display (true) a "Learn More" button or not (false)</td>
-                                <td class="hidden-xs-down">true</td>
-                            </tr>
-                            <tr>
                                 <td>position</td>
                                 <td>string</td>
                                 <td>The area of the window to show the cookie notification</td>
                                 <td class="hidden-xs-down">"bottom"</td>
+                            </tr>
+                            <tr>
+                                <td>learnMore</td>
+                                <td>bool</td>
+                                <td>Display (true) a "Learn More" button or not (false)</td>
+                                <td class="hidden-xs-down">true</td>
                             </tr>
                             <tr>
                                 <td>onAccept</td>
@@ -358,7 +365,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./cookiepopup.js"></script>
-<script type="text/javascript">
+<script type="text/javascript">    
     $(function () {
         // Cookies
         var options = {
@@ -371,6 +378,7 @@
         };
 
         var cookie = $.acceptCookies(options);
+        updateCodeArea();
 
         $('.clear-button').click(function(e) {
             e.preventDefault();
@@ -378,6 +386,7 @@
             document.cookie = 'cookiesAccepted=; path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             cookie = $.acceptCookies(options);
             $(".cookie-indicator").removeClass("badge-success").addClass("badge-danger").text("No cookie found");
+            updateCodeArea();
         });
 
         $('.theme-button').click(function(e) {
@@ -385,6 +394,7 @@
             $('#cookie-popup-container').remove();
             options.theme = $(this).data("theme").replace("theme-", "");
             cookie = $.acceptCookies(options);
+            updateCodeArea();
         });
 
         $('.position-button').click(function(e) {
@@ -394,6 +404,7 @@
             var position = $(this).data("position");
             options.position = position;
             cookie = $.acceptCookies(options);
+            updateCodeArea();
         });
 
         $('#btnCustomize').click(function(e) {
@@ -435,12 +446,24 @@
             }
 
             cookie = $.acceptCookies(options);
+            updateCodeArea();
         });
 
         if(getCookie("cookiesAccepted"))
             $(".cookie-indicator").removeClass("badge-danger").addClass("badge-success").text("Cookie saved");
         else
             $(".cookie-indicator").removeClass("badge-success").addClass("badge-danger").text("No cookie found");
+
+        function updateCodeArea() {
+            var code = 
+                "var options = " + 
+                    JSON.stringify(options, null, 5) +
+                ";\n" +
+                "$.acceptCookies(options);";
+
+            $('#currentOptions').text(code);
+            $("#currentOptions").height($("#currentOptions")[0].scrollHeight);
+        }
     });
 
     var acceptCallbackFunction = function() {

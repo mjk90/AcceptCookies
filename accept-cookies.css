@@ -80,6 +80,15 @@
     margin-right: 5px;
     text-decoration: none;
     color: #000;
+    opacity: 0.75;
+}
+.cookie-popup-learn-more:hover {
+    opacity: 1;
+    text-decoration: none;    
+}
+.cookie-popup-learn-more:active,
+.cookie-popup-learn-more:focus {
+    text-decoration: none;
 }
 .cookie-popup-lower {
     padding: 15px;
@@ -142,6 +151,10 @@
 
 
 /* Themes */
+.theme-light .cookie-popup { background-color: #fafafa; color: #000; }
+.theme-light .cookie-popup-accept-cookies { background-color: #c7c7c7; color: #000; }
+.theme-light .cookie-popup-learn-more { color: #000; }
+
 .theme-dark .cookie-popup { background-color: #484848; color: #fff; }
 .theme-dark .cookie-popup-accept-cookies { background-color: #212121; color: #fff; }
 .theme-dark .cookie-popup-learn-more { color: #fff; }

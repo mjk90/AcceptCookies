@@ -146,8 +146,8 @@
     <div class="jumbotron jumbotron-fluid text-center">
         <div class="container">
             <h1 class="display-3">Simple, responsive cookie acceptance plugin</h1>
-            <p>Comply with EU cookie law, in a non-obtrusive way that conforms to your site's style.</p>
-            <p class="lead">
+            <p class="text-muted">AcceptCookies allows your to inform users of your use of cookies in a stylish, non-obtrusive way.</p>
+            <p class="lead mb-0">
                 <a id="btnCustomize" class="btn btn-info btn-lg" href="#" role="button">Customize</a>
                 <a id="btnDownload" class="btn btn-success btn-lg" href="#" role="button">Download</a>
             </p>
@@ -342,7 +342,7 @@
                             <tr>
                                 <td>onAccept</td>
                                 <td>callback</td>
-                                <td>The Javascript function to call when user's click "Accept".</td>
+                                <td>The Javascript function to call when users click "Accept".</td>
                                 <td class="hidden-xs-down">N/A</td>
                             </tr>
                         </tbody>
@@ -461,7 +461,8 @@
                 ";\n" +
                 "$.acceptCookies(options);";
 
-            $('#currentOptions').text(code);
+            $('#currentOptions').val(code);
+            $("#currentOptions").height(0);
             $("#currentOptions").height($("#currentOptions")[0].scrollHeight);
         }
     });

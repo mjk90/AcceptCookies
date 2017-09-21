@@ -108,6 +108,15 @@
             font-size: 14px;
         }
 
+        .jumbotron.cookiesJumbotron {
+            border-bottom: 1px solid #ececec;
+            background: #ffffff; /* Old browsers */
+            background: -moz-linear-gradient(top,  #ffffff 0%, #f9fafc 25%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #ffffff 0%,#f9fafc 25%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #ffffff 0%,#f9fafc 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9fafc',GradientType=0 ); /* IE6-9 */
+        }
+
         /* Button Colours */
         .content .button[data-theme="theme-light"] { background-color: #fafafa; }
         .content .button[data-theme="theme-dark"] { background-color: #484848; color: #fff; }
@@ -139,14 +148,14 @@
 
 <body class="index" id="page-top">
 
-    <header class="col-md-12 text-center mb-3">
-        <img src="images/logosmall.png">
+    <header class="col-md-12 text-center mb-2 mt-2">
+        <img src="images/acLogo.png">
     </header>
 
-    <div class="jumbotron jumbotron-fluid text-center">
+    <div class="jumbotron jumbotron-fluid cookiesJumbotron text-center">
         <div class="container">
             <h1 class="display-3">Simple, responsive cookie acceptance plugin</h1>
-            <p class="text-muted">AcceptCookies allows your to inform users of your use of cookies in a stylish, non-obtrusive way.</p>
+            <p class="text-muted">AcceptCookies is a jQuery plugin which allows your to inform users of your use of cookies in a stylish, non-obtrusive way.</p>
             <p class="lead mb-0">
                 <a id="btnCustomize" class="btn btn-info btn-lg" href="#" role="button">Customize</a>
                 <a id="btnDownload" class="btn btn-success btn-lg" href="#" role="button">Download</a>
